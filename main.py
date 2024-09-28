@@ -1,3 +1,4 @@
+# Declaring variables for the doc path & the list of alphabetical characters
 book_path = "books/frankenstein.txt"
 valid_char = list("qwertyuiopasdfghjklzxcvbnm")
 
@@ -23,6 +24,15 @@ def get_word_count(book):
     return len(words)
 
 
+"""
+1- Convert the text into lower case
+2- Loop into the text comparing it to the valid_char list
+3- Assign all valid characters to char_dict and increment it's number
+4- Convert char_dict into a list of dictionnaries & sort alphabetically
+5- Return the list ordered with each character on a new line
+"""
+
+
 def get_character_count(book):
     char_dict = {}
     lower_string = book.lower()
@@ -30,9 +40,13 @@ def get_character_count(book):
         if char in valid_char:
             char_dict[char] = char_dict.get(char, 0) + 1
 
-    result_list = [f"The letter '{char}' was found {count} times" for char, count in char_dict.items()]
+    result_list = [
+        f"The letter '{char}' was found {count} times"
+        for char, count in char_dict.items()
+    ]
     result_list.sort(key=lambda text: text.split()[2])
 
     return "\n".join(result_list)
+
 
 main()
