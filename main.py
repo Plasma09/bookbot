@@ -24,15 +24,11 @@ def get_word_count(book):
     return len(words)
 
 
-"""
-1- Convert the text into lower case
-2- Loop into the text comparing it to the valid_char list
-3- Assign all valid characters to char_dict and increment it's number
-4- Convert char_dict into a list of dictionnaries & sort alphabetically
-5- Return the list ordered with each character on a new line
-"""
-
-
+# 1- Convert the text into lower case
+# 2- Loop into the text comparing it to the valid_char list
+# 3- Assign all valid characters to char_dict and increment it's number
+# 4- Convert char_dict into a list of dictionnaries & sort alphabetically
+# 5- Return the list ordered with each character on a new line
 def get_character_count(book):
     char_dict = {}
     lower_string = book.lower()
