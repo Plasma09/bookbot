@@ -25,20 +25,13 @@ def get_word_count(book):
 
 def get_character_count(book):
     char_dict = {}
-    char_list = []
     lower_string = book.lower()
     for char in lower_string:
         if char in valid_char:
-            if char in char_dict:
-                char_dict[char] += 1
-            else:
-                char_dict[char] = 1
+            char_dict[char] = char_dict.get(char, 0) + 1
 
-    result_list = []
-    for char in char_dict:
-        count = char_dict[char]
-        result_list.append(f"The letter '{char}' was found {count} times")
-    
+    result_list = [f"The letter '{char}' was found {count} times" for char, count in char_dict.items()]
+    result_list.sort(key=lambda text: text.split()[2])
 
     return "\n".join(result_list)
 
